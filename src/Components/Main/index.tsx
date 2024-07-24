@@ -1,18 +1,20 @@
+import { PokeField } from "../PokeField"
+import { SearchBar } from "../SearchBar"
 import styles from "./styles.module.css"
-import pokeball from "../../assets/Pokebola.png"
+
 
 export function Main() {
     return(
         <>
             <main className={styles.container}>
-                <div className={styles.searchBar}>
-                    <input type="text" />
-                    <button>
-                        <img src={pokeball} alt="button" />
-                    </button>
+                <SearchBar />
+                <PokeField />
+                <div className={styles.infoField}>
+                    <p>#25</p>
+                    <div className={styles.types} style={{backgroundColor:`yellow`}}>
+                        <p>eletric</p>
+                    </div>
                 </div>
-                <div></div>
-                <div></div>
             </main>
         </>
     )

@@ -1,0 +1,24 @@
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 20px;
+    width: 300px;
+    height: 200px;
+
+    background-image: url(../../assets/pokemon_field.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+    box-shadow: inset 0 0 20px #fff;
+
+    >.pokemon{
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 150px;
+        height: 150px;
+    }
+}
