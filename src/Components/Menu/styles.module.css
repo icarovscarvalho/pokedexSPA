@@ -1,0 +1,71 @@
+.container {
+    display: flex;
+    flex-direction: column;
+
+    position: absolute;
+    bottom: 88px;
+    width: 100%;
+
+    >button {
+        width: 100%;
+        height: 30px;
+
+        border-radius: 10px 10px 0 0;
+        border: 1px solid #9b9b9b;
+        background-color: #80429b;
+        font-size: 1.2rem;
+        color: #c9b824;
+        cursor: pointer;
+    }
+
+    >.pokeballsContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        width: 100%;
+        height: 100%;
+        padding: 20px;
+
+        background-color: #fff;
+        background-image: url(../../assets/bg-branco.webp);
+        background-size: cover;
+        border-right: 1px solid #9b9b9b;
+        border-left: 1px solid #9b9b9b;
+        cursor: default;
+
+        >.pokeballsDiv{
+            display: flex;
+
+            padding: 5px;
+            margin-bottom: 10px;
+            height: fit-content;
+            border: 1px solid #000;
+            border-radius: 5px;
+
+            >.pokeOptions{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                gap: 10px;
+
+                padding: 5px;
+
+                >.icon{
+                    font-size: 1.3rem;
+                    cursor: pointer;
+                }
+            }
+
+            >.pokeSkin{
+                width: 70px;
+                height: 70px;
+
+                background-image: url(../../assets/Pokebola.png);
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-size: contain;
+            }
+        }
+    }
+}

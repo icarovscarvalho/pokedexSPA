@@ -5,6 +5,7 @@
     position: absolute;
     bottom: 59px;
     width: 100%;
+    z-index: 1;
 
     >button{
         width: 100%;
@@ -29,6 +30,7 @@
         background-color: #fff;
         border-right: 1px solid #9b9b9b;
         border-left: 1px solid #9b9b9b;
+        cursor: default;
 
         >h2{
             display: flex;
