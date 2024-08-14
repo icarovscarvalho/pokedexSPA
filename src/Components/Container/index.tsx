@@ -13,8 +13,10 @@ export function Container() {
             <div className={styles.globalContainer}>
                 <Header />
                 <Main />
-                <Instructions />
-                <Menu />
+                <div className={styles.buttonsContainer}>
+                    <Instructions />
+                    <Menu />
+                </div>
                 <Footer />
             </div>
         </>

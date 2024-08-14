@@ -16,6 +16,14 @@
         font-size: 1.2rem;
         color: #55881a;
         cursor: pointer;
+
+        >:first-child:hover{
+            animation: animetionArrow .7s infinite linear;
+        }
+
+        &:first-child:active{
+            filter: brightness(90%);
+        }
     }
 
     >.instructionsDiv{
@@ -50,5 +58,19 @@
         >img{
             width: 250px;
         }
+    }
+}
+
+@keyframes animetionArrow {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-3px);
+    }
+
+    100% {
+        transform: translateY(0px);
     }
 }
