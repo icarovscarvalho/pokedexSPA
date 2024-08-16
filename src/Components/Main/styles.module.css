@@ -13,11 +13,14 @@
         padding: 10px;
         text-align: center;
 
-        >p{
+        >:first-child{
+            display: flex;
+            gap: 10px;
             color: #9b9b9b;
         }
 
         >.types{
+            margin: 0 auto;
             margin-top: 10px;
             padding: 2px 10px;
             width: 70px;

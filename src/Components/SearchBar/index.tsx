@@ -3,10 +3,11 @@ import pokeball from "../../assets/Pokebola.png"
 import styles from "./styles.module.css"
 
 interface MainProps{
-    dataSearch:(pokemon:string)=>Promise<void>
+    dataSearchAPI:(pokemon:string)=>Promise<void>
+    pokeballHandleAnimation:()=>void
 }
 
-export function SearchBar({dataSearch}:MainProps) {
+export function SearchBar({dataSearchAPI, pokeballHandleAnimation}:MainProps) {
 
     let [pokemon, setPokemon] = useState<string>("")
 
@@ -26,7 +27,9 @@ export function SearchBar({dataSearch}:MainProps) {
                 value={pokemon}
                 onChange={handleChange}
                 />
-                <button onClick={() => dataSearch(pokemon)}>
+                <button onClick={() => {
+                    dataSearchAPI(pokemon)
+                }}>
                     <img src={pokeball} alt="button" />
                 </button>
             </div>
