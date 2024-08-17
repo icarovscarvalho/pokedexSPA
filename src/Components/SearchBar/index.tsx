@@ -1,4 +1,4 @@
-import { useState } from "react"
+import React, { useState } from "react"
 import pokeball from "../../assets/Pokebola.png"
 import styles from "./styles.module.css"
 
@@ -13,13 +13,15 @@ export function SearchBar({dataSearchAPI, pokeballHandleAnimation}:MainProps) {
 
     const  handleChange = (e:any) => setPokemon(e.target.value)
 
-    // const getPokemonValue = (e:any) => {
-    //     console.log(pokemon)
-    // }
+    function handleForm(e:React.FormEvent) {
+        e.preventDefault()
+        dataSearchAPI(pokemon)
+        setPokemon('')
+    }
 
     return(
         <>
-            <div className={styles.searchBar}>
+            <form className={styles.searchBar} onSubmit={(e) => handleForm(e)}>
                 <input
                 type="text"
                 min={1}
@@ -27,12 +29,10 @@ export function SearchBar({dataSearchAPI, pokeballHandleAnimation}:MainProps) {
                 value={pokemon}
                 onChange={handleChange}
                 />
-                <button onClick={() => {
-                    dataSearchAPI(pokemon)
-                }}>
+                <button type="submit">
                     <img src={pokeball} alt="button" />
                 </button>
-            </div>
+            </form>
         </>
     )
 }

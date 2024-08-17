@@ -3,6 +3,7 @@
     align-items: center;
     justify-content: center;
     gap: 10px;
+    z-index: 3;
 
     padding: 10px 20px;
     height: 70px;

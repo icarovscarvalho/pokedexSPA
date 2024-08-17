@@ -17,7 +17,7 @@ export function Menu() {
     return(
         <>
             <section className={styles.container}>
-                <button onClick={handleToggleMenu}>
+                <button className={isMenuOpen?'' : styles.closed} onClick={handleToggleMenu}>
                     {isMenuOpen? <MdKeyboardDoubleArrowDown/> : <MdKeyboardDoubleArrowUp />}
                 </button>
                 <div className={styles.pokeballsContainer} style={isMenuOpen? {display:'flex'} : {display:'none'}}>

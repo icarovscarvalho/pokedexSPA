@@ -1,4 +1,3 @@
-import { useState } from "react"
 import { PokeField } from "../PokeField"
 import { SearchBar } from "../SearchBar"
 import styles from "./styles.module.css"
@@ -8,7 +7,7 @@ interface MainProps{
     pokemonName:string
     pokemonID:string
     pokemonImage:string
-    pokemonType:string
+    pokemonType:string[]
     pokeballHandleAnimation:()=>void
 }
 
@@ -26,9 +25,17 @@ export function Main({dataSearchAPI, pokeballHandleAnimation, pokemonName, pokem
                     <p>{pokemonID}</p>
                     <p>{pokemonName}</p>
                     </div>
-                    <div className={pokemonID!=''? styles.types : ''} style={{backgroundColor:`yellow`}}>
-                        <p>{pokemonType}</p>
-                    </div>
+
+                    {pokemonID &&
+                        <div className={styles.typesContainer}>
+                            {pokemonType.map(type=>
+                                <div className={`${styles.types} ${styles[type.toLowerCase()]}`}>
+                                    <p>{type}</p>
+                                </div>    
+                            )}
+                        </div>
+                    }
+
                 </div>
             </main>
         </>
