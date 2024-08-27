@@ -46,7 +46,7 @@ export function Instructions() {
                                 <MdOutlineKeyboardDoubleArrowLeft />
                             </button>
                             <p>{dialogPage}</p>
-                            <button onClick={handleNextDialogPage} className={dialogPage>2?styles.desactiveBtn:styles.activeBtn}>
+                            <button onClick={handleNextDialogPage} className={dialogPage>2? styles.desactiveBtn:styles.activeBtn}>
                                 <MdOutlineKeyboardDoubleArrowRight />
                             </button>
                         </div>

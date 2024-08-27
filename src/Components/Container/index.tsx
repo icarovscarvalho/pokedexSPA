@@ -5,6 +5,7 @@ import { Menu } from '../Menu'
 import { Footer } from '../Footer'
 import styles from "./styles.module.css"
 import { SetStateAction, useState } from 'react'
+import {pokemons} from "../../data/pokemons.json"
 
 type PokemonType = string
 
@@ -20,6 +21,7 @@ export function Container() {
     const [pokemonName, setPokemonName] = useState<string>('')
     const [pokemonImage, setPokemonImage] = useState<string>('')
     const [pokemonType, setPokemonType] = useState<string[]>([])
+    let firstEvo = pokemons[1].sprite
 
     async function getDatasAPI(pokemon:PokemonType) {
         try{
@@ -52,6 +54,7 @@ export function Container() {
                 pokemonID={pokemonID}
                 pokemonImage={pokemonImage}
                 pokemonType={pokemonType}
+                pokeEvoFirst={firstEvo}
                 />
                 <div className={styles.buttonsContainer}>
                     <Instructions />

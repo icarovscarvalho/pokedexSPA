@@ -1,6 +1,7 @@
 import { PokeField } from "../PokeField"
 import { SearchBar } from "../SearchBar"
 import styles from "./styles.module.css"
+import { MdOutlineDoubleArrow } from "react-icons/md";
 
 interface MainProps{
     dataSearchAPI:(pokemon:string)=>Promise<void>
@@ -8,9 +9,10 @@ interface MainProps{
     pokemonID:string
     pokemonImage:string
     pokemonType:string[]
+    pokeEvoFirst:string
 }
 
-export function Main({dataSearchAPI, pokemonName, pokemonID, pokemonImage, pokemonType}:MainProps) {
+export function Main({dataSearchAPI, pokemonName, pokemonID, pokemonImage, pokemonType, pokeEvoFirst}:MainProps) {
 
     return(
         <>
@@ -31,6 +33,15 @@ export function Main({dataSearchAPI, pokemonName, pokemonID, pokemonImage, pokem
                                     <p>{type}</p>
                                 </div>    
                             )}
+                        </div>
+                    }
+                    {pokemonID &&
+                        <div className={styles.pokeTreeFamily}>
+                            <div className={styles.pokeTree} style={{backgroundImage:`url(${pokeEvoFirst})`}}></div>
+                            <MdOutlineDoubleArrow className={styles.arrowEvo} />
+                            <div className={styles.pokeTree}></div>
+                            <MdOutlineDoubleArrow className={styles.arrowEvo} />
+                            <div className={styles.pokeTree}></div>
                         </div>
                     }
 
