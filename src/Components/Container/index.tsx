@@ -20,7 +20,6 @@ export function Container() {
     const [pokemonName, setPokemonName] = useState<string>('')
     const [pokemonImage, setPokemonImage] = useState<string>('')
     const [pokemonType, setPokemonType] = useState<string[]>([])
-    const [wasClicked, setWasClicked] = useState(false)
 
     async function getDatasAPI(pokemon:PokemonType) {
         try{
@@ -44,10 +43,6 @@ export function Container() {
         }
     }
 
-    function pokeballHandleAnimation() {
-        setWasClicked(prevState=>!prevState)
-    }
-
     return(
         <>
             <div className={styles.globalContainer}>
@@ -57,7 +52,6 @@ export function Container() {
                 pokemonID={pokemonID}
                 pokemonImage={pokemonImage}
                 pokemonType={pokemonType}
-                pokeballHandleAnimation={pokeballHandleAnimation}
                 />
                 <div className={styles.buttonsContainer}>
                     <Instructions />

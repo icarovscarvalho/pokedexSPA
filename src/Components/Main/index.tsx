@@ -8,16 +8,14 @@ interface MainProps{
     pokemonID:string
     pokemonImage:string
     pokemonType:string[]
-    pokeballHandleAnimation:()=>void
 }
 
-export function Main({dataSearchAPI, pokeballHandleAnimation, pokemonName, pokemonID, pokemonImage, pokemonType}:MainProps) {
+export function Main({dataSearchAPI, pokemonName, pokemonID, pokemonImage, pokemonType}:MainProps) {
 
     return(
         <>
             <main className={styles.container}>
                 <SearchBar dataSearchAPI={dataSearchAPI}
-                pokeballHandleAnimation={pokeballHandleAnimation}
                 />
                 <PokeField pokemonImage={pokemonImage} />
                 <div className={styles.infoField}>
@@ -29,7 +27,7 @@ export function Main({dataSearchAPI, pokeballHandleAnimation, pokemonName, pokem
                     {pokemonID &&
                         <div className={styles.typesContainer}>
                             {pokemonType.map(type=>
-                                <div className={`${styles.types} ${styles[type.toLowerCase()]}`}>
+                                <div key={type} className={`${styles.types} ${styles[type.toLowerCase()]}`}>
                                     <p>{type}</p>
                                 </div>    
                             )}

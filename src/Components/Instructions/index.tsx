@@ -10,6 +10,7 @@ export function Instructions() {
 
     function handleToggleInstructions() {
         setIsMenuOpen(prevState=>!prevState)
+        console.log(isMenuOpen)
     }
 
     function handleNextDialogPage() {
