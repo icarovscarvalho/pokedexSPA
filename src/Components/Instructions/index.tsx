@@ -42,9 +42,13 @@ export function Instructions() {
                         </p>}
                         {dialogPage===3 && <p>After that, a check button will appear that will directly show all the information about the chosen Pokémon.</p>}
                         <div className={styles.instructionsButtonsContainer}>
-                            <button onClick={handlePrevDialogPage}><MdOutlineKeyboardDoubleArrowLeft /></button>
+                            <button onClick={handlePrevDialogPage} className={dialogPage<2? styles.desactiveBtn:styles.activeBtn}>
+                                <MdOutlineKeyboardDoubleArrowLeft />
+                            </button>
                             <p>{dialogPage}</p>
-                            <button onClick={handleNextDialogPage}><MdOutlineKeyboardDoubleArrowRight /></button>
+                            <button onClick={handleNextDialogPage} className={dialogPage>2?styles.desactiveBtn:styles.activeBtn}>
+                                <MdOutlineKeyboardDoubleArrowRight />
+                            </button>
                         </div>
                     </div>
                     <img src={oakProfessor} alt="Oak professor" />

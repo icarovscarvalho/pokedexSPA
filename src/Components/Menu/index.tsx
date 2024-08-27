@@ -42,6 +42,27 @@ export function Menu() {
                         </div>
                         <div className={styles.pokeSkin}/>
                     </div>
+                    <div className={styles.pokeballsDiv}>
+                        <div className={styles.pokeOptions}>
+                            <FaRegStar className={styles.icon} />
+                            <MdOutlineChangeCircle className={styles.icon} />
+                        </div>
+                        <div className={styles.pokeSkin}/>
+                    </div>
+                    <div className={styles.pokeballsDiv}>
+                        <div className={styles.pokeOptions}>
+                            <FaRegStar className={styles.icon} />
+                            <MdOutlineChangeCircle className={styles.icon} />
+                        </div>
+                        <div className={styles.pokeSkin}/>
+                    </div>
+                    <div className={styles.pokeballsDiv}>
+                        <div className={styles.pokeOptions}>
+                            <FaRegStar className={styles.icon} />
+                            <MdOutlineChangeCircle className={styles.icon} />
+                        </div>
+                        <div className={styles.pokeSkin}/>
+                    </div>
                 </div>
             </section>
         </>

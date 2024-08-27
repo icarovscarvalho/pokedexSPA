@@ -25,6 +25,10 @@
         >img {
             width: 25px;
         }
+
+        &>:hover{
+            scale: 1.05;
+        }
     }
 }
 

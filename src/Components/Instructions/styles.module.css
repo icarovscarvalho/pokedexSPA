@@ -67,6 +67,9 @@
                 border: 1px solid #000;
                 border-radius: 10px;
                 margin-bottom: 10px;
+                max-width: 780px;
+                /* Padroniza altura da caixa de diologos */
+                /* height: 120px;*/
             }
             
             >.instructionsButtonsContainer {
@@ -88,18 +91,24 @@
                     border: none;
                     border-radius: 50%;
                     font-size: 1.2rem;
-                    cursor: pointer;
-                }
-        
-                >button:hover {
-                    scale: 1.1;
-                }
-        
-                >button:active {
-                    scale: 0.8;
                 }
             }
         }
+    }
+}
+
+.desactiveBtn {
+    opacity: 0;
+    cursor: default;
+}
+
+.activeBtn{
+    cursor: pointer;
+    &:hover{
+        scale: 1.1;
+    }
+    &:active{
+        scale: 0.8;
     }
 }
 
