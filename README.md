@@ -41,18 +41,21 @@ Antes de começar, certifique-se de ter instalado:
 1. **Clone o repositório:**
   ```bash
   git clone https://github.com/seu-usuario/pokedex-spa.git
+```
 
 2. **Instale as dependências:**
   ```bash
   npm install
   # ou
   yarn install
+```
 
 3. **Instale as dependências:**
   ```bash
   npm start
   # ou
   yarn start
+```
 
 ## Como Usar
 
