@@ -6,7 +6,8 @@ export function Footer() {
     return(
         <>
             <footer className={styles.container}>
-                <p>website developed by <strong>Ícaro Carvalho</strong></p>
+                <p>website developed by</p>
+                <p className={styles.nameDEV}><strong>Ícaro Carvalho</strong></p>
                 <div className={styles.iconsDiv}>
                     <FaGithub className={styles.icon} />
                     <FaLinkedin className={styles.icon} />

@@ -16,14 +16,17 @@
         border-radius: 4px;
         border: 1px solid #9b9b9b;
         outline: 0;
+        cursor: text;
     }
 
     >button {
         background-color: transparent;
         border: none;
-        cursor: pointer;
+        
         >img {
+            height: 24px;
             width: 25px;
+            cursor: pointer;
         }
 
         &>:hover{

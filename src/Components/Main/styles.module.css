@@ -81,6 +81,13 @@
                 border-radius: 50%;
                 background-position: center;
                 background-size: cover;
+                cursor: pointer;
+                transition: all .3s ease-in;
+
+                &:hover{
+                    scale: 1.1;
+                    transition: all .3s ease-in;
+                }
             }
         }
     }

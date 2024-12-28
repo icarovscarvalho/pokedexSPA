@@ -56,7 +56,7 @@
         border-left: 1px solid #9b9b9b;
         cursor: default;
 
-        >.pokeballsDiv{
+        /* >.pokeballsDiv{
             display: flex;
 
             padding: 5px;
@@ -88,7 +88,7 @@
                 background-repeat: no-repeat;
                 background-size: contain;
             }
-        }
+        } */
     }
 }
 

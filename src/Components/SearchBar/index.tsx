@@ -11,7 +11,7 @@ export function SearchBar({dataSearchAPI}:MainProps) {
     let [pokemon, setPokemon] = useState<string>("")
     const [wasClicked, setWasClicked] = useState<boolean>(false)
 
-    const  handleChange = (e:any) => setPokemon(e.target.value)
+    const  handleChange = (e:any) => setPokemon(e.target.value.toLowerCase())
 
     function handleForm(e:React.FormEvent) {
         e.preventDefault()

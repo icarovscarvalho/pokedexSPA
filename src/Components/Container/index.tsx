@@ -17,11 +17,11 @@ type TypeObj = {
 
 export function Container() {
 
-    const [pokemonID, setPokemonID] = useState<string>('')
+    const [pokemonID, setPokemonID] = useState<number>(0)
+    const [firstEvoID, setFirstEvoID] = useState<string>('')
     const [pokemonName, setPokemonName] = useState<string>('')
     const [pokemonImage, setPokemonImage] = useState<string>('')
     const [pokemonType, setPokemonType] = useState<string[]>([])
-    let firstEvo = pokemons[1].sprite
 
     async function getDatasAPI(pokemon:PokemonType) {
         try{
@@ -29,7 +29,8 @@ export function Container() {
             const responseJSON = await response.json()
             const pokemonTypesList: SetStateAction<string[]> = []
             
-            setPokemonID(`#${responseJSON.id}`)
+            setPokemonID(responseJSON.id)
+            setFirstEvoID(`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${responseJSON.id+1}.png`)
             setPokemonName(responseJSON.name)
             setPokemonImage(`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${responseJSON.id}.png`)
             // setPokemonType(responseJSON.types[0].type.name)
@@ -52,9 +53,9 @@ export function Container() {
                 <Main dataSearchAPI={getDatasAPI}
                 pokemonName={pokemonName}
                 pokemonID={pokemonID}
+                pokemonEVO={firstEvoID}
                 pokemonImage={pokemonImage}
                 pokemonType={pokemonType}
-                pokeEvoFirst={firstEvo}
                 />
                 <div className={styles.buttonsContainer}>
                     <Instructions />

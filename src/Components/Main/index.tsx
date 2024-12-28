@@ -6,13 +6,13 @@ import { MdOutlineDoubleArrow } from "react-icons/md";
 interface MainProps{
     dataSearchAPI:(pokemon:string)=>Promise<void>
     pokemonName:string
-    pokemonID:string
+    pokemonID:number
+    pokemonEVO:string
     pokemonImage:string
     pokemonType:string[]
-    pokeEvoFirst:string
 }
 
-export function Main({dataSearchAPI, pokemonName, pokemonID, pokemonImage, pokemonType, pokeEvoFirst}:MainProps) {
+export function Main({dataSearchAPI, pokemonName, pokemonID, pokemonEVO, pokemonImage, pokemonType}:MainProps) {
 
     return(
         <>
@@ -22,11 +22,11 @@ export function Main({dataSearchAPI, pokemonName, pokemonID, pokemonImage, pokem
                 <PokeField pokemonImage={pokemonImage} />
                 <div className={styles.infoField}>
                     <div>
-                    <p>{pokemonID}</p>
-                    <p>{pokemonName}</p>
+                        <p>{pokemonName ? `#${pokemonID}`:""}</p>
+                        <p>{pokemonName}</p>
                     </div>
 
-                    {pokemonID &&
+                    {pokemonID != 0 &&
                         <div className={styles.typesContainer}>
                             {pokemonType.map(type=>
                                 <div key={type} className={`${styles.types} ${styles[type.toLowerCase()]}`}>
@@ -35,14 +35,15 @@ export function Main({dataSearchAPI, pokemonName, pokemonID, pokemonImage, pokem
                             )}
                         </div>
                     }
-                    {pokemonID &&
+                    {pokemonName ?
                         <div className={styles.pokeTreeFamily}>
-                            <div className={styles.pokeTree} style={{backgroundImage:`url(${pokeEvoFirst})`}}></div>
+                            <div className={styles.pokeTree} style={{backgroundImage:`url(${pokemonImage})`}}></div>
                             <MdOutlineDoubleArrow className={styles.arrowEvo} />
-                            <div className={styles.pokeTree}></div>
+                            <div className={styles.pokeTree} style={{backgroundImage:`url(${pokemonEVO})`}}></div>
                             <MdOutlineDoubleArrow className={styles.arrowEvo} />
-                            <div className={styles.pokeTree}></div>
+                            <div className={styles.pokeTree} style={{backgroundImage:`url(${pokemonImage})`}}></div>
                         </div>
+                        : ""
                     }
 
                 </div>

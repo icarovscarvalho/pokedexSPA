@@ -19,6 +19,7 @@
 
         >:first-child:hover{
             animation: animetionArrow .7s infinite linear;
+            cursor: pointer;
         }
 
         &:first-child:active{
@@ -45,7 +46,7 @@
         >img {
             opacity: 0;
             width: 250px;
-            animation: openMenuImg .7s .5s forwards ease-out;
+            animation: openMenuImg .7s .2s forwards ease-out;
         }
 
         >div{

@@ -1,0 +1,53 @@
+.pokeballsDiv {
+    display: flex;
+
+    padding: 5px;
+    margin-bottom: 10px;
+    height: fit-content;
+    border: 1px solid #000;
+    border-radius: 5px;
+
+    >.pokeOptions {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 10px;
+
+        padding: 5px;
+
+        >.icon {
+            font-size: 1.3rem;
+            cursor: pointer;
+        }
+
+        >.starON{
+            stroke: #000;
+            stroke-width: 30px;
+            color: rgb(214, 200, 0);
+            cursor: pointer;
+        }
+
+        >.starOFF{
+            stroke: #000;
+            stroke-width: 30px;
+            color: #EFF0EF;
+            cursor: pointer;
+        }
+    }
+
+    >.pokeSkin {
+        width: 70px;
+        height: 70px;
+
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: contain;
+
+        cursor: pointer;
+    }
+}
+
+.spin {
+    transform: rotate(1080deg);
+    transition: .5s all;
+}

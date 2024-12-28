@@ -1,11 +1,10 @@
 import { useState } from "react";
-import { FaRegStar, FaStar } from "react-icons/fa";
-import { MdOutlineChangeCircle } from "react-icons/md";
+
 import { MdKeyboardDoubleArrowUp, MdKeyboardDoubleArrowDown } from "react-icons/md";
+
+
 import styles from "./styles.module.css"
-
-
-{/* <FaRegStar /> */}
+import { Pokeballs } from "../Pokeballs";
 
 export function Menu() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -21,48 +20,12 @@ export function Menu() {
                     {isMenuOpen? <MdKeyboardDoubleArrowDown/> : <MdKeyboardDoubleArrowUp />}
                 </button>
                 <div className={styles.pokeballsContainer} style={isMenuOpen? {display:'flex'} : {display:'none'}}>
-                    <div className={styles.pokeballsDiv}>
-                        <div className={styles.pokeOptions}>
-                            <FaRegStar className={styles.icon} />
-                            <MdOutlineChangeCircle className={styles.icon} />
-                        </div>
-                        <div className={styles.pokeSkin}/>
-                    </div>
-                    <div className={styles.pokeballsDiv}>
-                        <div className={styles.pokeOptions}>
-                            <FaRegStar className={styles.icon} />
-                            <MdOutlineChangeCircle className={styles.icon} />
-                        </div>
-                        <div className={styles.pokeSkin}/>
-                    </div>
-                    <div className={styles.pokeballsDiv}>
-                        <div className={styles.pokeOptions}>
-                            <FaRegStar className={styles.icon} />
-                            <MdOutlineChangeCircle className={styles.icon} />
-                        </div>
-                        <div className={styles.pokeSkin}/>
-                    </div>
-                    <div className={styles.pokeballsDiv}>
-                        <div className={styles.pokeOptions}>
-                            <FaRegStar className={styles.icon} />
-                            <MdOutlineChangeCircle className={styles.icon} />
-                        </div>
-                        <div className={styles.pokeSkin}/>
-                    </div>
-                    <div className={styles.pokeballsDiv}>
-                        <div className={styles.pokeOptions}>
-                            <FaRegStar className={styles.icon} />
-                            <MdOutlineChangeCircle className={styles.icon} />
-                        </div>
-                        <div className={styles.pokeSkin}/>
-                    </div>
-                    <div className={styles.pokeballsDiv}>
-                        <div className={styles.pokeOptions}>
-                            <FaRegStar className={styles.icon} />
-                            <MdOutlineChangeCircle className={styles.icon} />
-                        </div>
-                        <div className={styles.pokeSkin}/>
-                    </div>
+                    <Pokeballs />
+                    <Pokeballs />
+                    <Pokeballs />
+                    <Pokeballs />
+                    <Pokeballs />
+                    <Pokeballs />
                 </div>
             </section>
         </>
