@@ -19,14 +19,14 @@ export function Main({dataSearchAPI, pokemonName, pokemonID, pokemonEVO, pokemon
             <main className={styles.container}>
                 <SearchBar dataSearchAPI={dataSearchAPI}
                 />
-                <PokeField pokemonImage={pokemonImage} />
+                <PokeField pokemonImage={pokemonImage}  />
                 <div className={styles.infoField}>
                     <div>
                         <p>{pokemonName ? `#${pokemonID}`:""}</p>
                         <p>{pokemonName}</p>
                     </div>
 
-                    {pokemonID != 0 &&
+                    {pokemonName ?
                         <div className={styles.typesContainer}>
                             {pokemonType.map(type=>
                                 <div key={type} className={`${styles.types} ${styles[type.toLowerCase()]}`}>
@@ -34,7 +34,9 @@ export function Main({dataSearchAPI, pokemonName, pokemonID, pokemonEVO, pokemon
                                 </div>    
                             )}
                         </div>
+                        : ""
                     }
+                    
                     {pokemonName ?
                         <div className={styles.pokeTreeFamily}>
                             <div className={styles.pokeTree} style={{backgroundImage:`url(${pokemonImage})`}}></div>

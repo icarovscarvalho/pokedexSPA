@@ -21,7 +21,6 @@ export function SearchBar({dataSearchAPI}:MainProps) {
 
     function pokeballHandleAnimation() {
         setWasClicked(prevState=>!prevState)
-        console.log(wasClicked)
         // console.log('A pokebola está girando')
         
         const interval = setInterval(()=>{

@@ -5,7 +5,6 @@ import { Menu } from '../Menu'
 import { Footer } from '../Footer'
 import styles from "./styles.module.css"
 import { SetStateAction, useState } from 'react'
-import {pokemons} from "../../data/pokemons.json"
 
 type PokemonType = string
 
@@ -50,16 +49,20 @@ export function Container() {
         <>
             <div className={styles.globalContainer}>
                 <Header />
-                <Main dataSearchAPI={getDatasAPI}
-                pokemonName={pokemonName}
-                pokemonID={pokemonID}
-                pokemonEVO={firstEvoID}
-                pokemonImage={pokemonImage}
-                pokemonType={pokemonType}
+                <Main
+                    dataSearchAPI={getDatasAPI}
+                    pokemonName={pokemonName}
+                    pokemonID={pokemonID}
+                    pokemonEVO={firstEvoID}
+                    pokemonImage={pokemonImage}
+                    pokemonType={pokemonType}
                 />
                 <div className={styles.buttonsContainer}>
                     <Instructions />
-                    <Menu />
+                    <Menu
+                        dataSearchAPI={getDatasAPI}
+                        pokemonName={pokemonName}
+                    />
                 </div>
                 <Footer />
             </div>

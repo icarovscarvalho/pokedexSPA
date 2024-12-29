@@ -6,11 +6,33 @@ import { MdKeyboardDoubleArrowUp, MdKeyboardDoubleArrowDown } from "react-icons/
 import styles from "./styles.module.css"
 import { Pokeballs } from "../Pokeballs";
 
-export function Menu() {
+interface MenuProps{
+    dataSearchAPI:(pokemon:string)=>Promise<void>
+    pokemonName:string
+}
+
+export function Menu({dataSearchAPI, pokemonName}:MenuProps) {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     function handleToggleMenu() {
         setIsMenuOpen(prevState=>!prevState)
+    }
+
+    function populatePokeballs(qtd:number) {
+        const pokeballs = []
+
+        for(let i=0; i<qtd; i++) {
+            pokeballs.push(
+                <Pokeballs
+                    key={`pkb${i}`}
+                    dataSearchAPI={dataSearchAPI}
+                    pokemonName={pokemonName}
+                    id={`pkb${i}`}
+                />
+            )
+        }
+
+        return pokeballs
     }
 
     return(
@@ -20,12 +42,7 @@ export function Menu() {
                     {isMenuOpen? <MdKeyboardDoubleArrowDown/> : <MdKeyboardDoubleArrowUp />}
                 </button>
                 <div className={styles.pokeballsContainer} style={isMenuOpen? {display:'flex'} : {display:'none'}}>
-                    <Pokeballs />
-                    <Pokeballs />
-                    <Pokeballs />
-                    <Pokeballs />
-                    <Pokeballs />
-                    <Pokeballs />
+                    {populatePokeballs(6)}
                 </div>
             </section>
         </>
