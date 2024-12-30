@@ -7,7 +7,7 @@ export function Footer() {
         <>
             <footer className={styles.container}>
                 <p>website developed by</p>
-                <p className={styles.nameDEV}><strong>Ícaro Carvalho</strong></p>
+                <p className={styles.nameDEV}><strong><a href="https://www.linkedin.com/in/icarovscarvalho/" target="_blank">Ícaro Carvalho</a></strong></p>
                 <div className={styles.iconsDiv}>
                     <FaGithub className={styles.icon} />
                     <FaLinkedin className={styles.icon} />

@@ -23,7 +23,8 @@ export function Container() {
     const [pokemonType, setPokemonType] = useState<string[]>([])
 
     async function getDatasAPI(pokemon:PokemonType) {
-        try{
+        try {
+            // const pokemonFixedName = await getPokemonSuggestion(pokemon)
             const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
             const responseJSON = await response.json()
             const pokemonTypesList: SetStateAction<string[]> = []
@@ -44,6 +45,26 @@ export function Container() {
             console.log("Requisição terminada")
         }
     }
+
+    // Código de verificação do nome do Pokemon
+    // async function getPokemonSuggestion(pokemonName:string) {
+    //     const url = `https://suggestqueries.google.com/complete/search?client=firefox&q=${encodeURIComponent("Pokemon " + pokemonName)}`;
+    //     try {
+    //         const response = await fetch(url);
+    //         if (!response.ok) {
+    //         throw new Error(`Erro na requisição! Status: ${response.status}`);
+    //         }
+    //         const data = await response.json();
+    //         const result = data[1][0] || null;
+    //         if (!result){
+    //         throw new Error(`Nome Incorreto`)
+    //         }
+    //         return result?result.split(" ")[1]:null
+    //     } catch (error) {
+    //         console.error("Erro ao buscar sugestão:", error);
+    //         throw new Error();
+    //     }
+    // }
 
     return(
         <>

@@ -12,6 +12,11 @@
     background-color: #87cf34;
     cursor: default;
 
+    a{
+        text-decoration: none;
+        color: inherit;
+    }
+
     >p{
         font-size: 1.1rem;
     }

@@ -54,11 +54,11 @@ export function Instructions() {
                         Well, that's all for while. Have fun in your journey, see Ya!!!</p>}
                         <div className={styles.instructionsButtonsContainer}>
                             <button onClick={handlePrevDialogPage} className={dialogPage<2? styles.desactiveBtn:styles.activeBtn}>
-                                <MdOutlineKeyboardDoubleArrowLeft style={{cursor: "pointer"}} />
+                                <MdOutlineKeyboardDoubleArrowLeft />
                             </button>
                             <p>{dialogPage}</p>
                             <button onClick={handleNextDialogPage} className={dialogPage>4? styles.desactiveBtn:styles.activeBtn}>
-                                <MdOutlineKeyboardDoubleArrowRight style={{cursor: "pointer"}} />
+                                <MdOutlineKeyboardDoubleArrowRight/>
                             </button>
                         </div>
                     </div>

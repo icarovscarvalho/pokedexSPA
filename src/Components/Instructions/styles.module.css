@@ -17,9 +17,12 @@
         color: #55881a;
         cursor: pointer;
 
+        >*{
+            cursor: pointer;
+        }
+
         >:first-child:hover{
             animation: animetionArrow .7s infinite linear;
-            cursor: pointer;
         }
 
         &:first-child:active{

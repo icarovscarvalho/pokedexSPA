@@ -28,6 +28,7 @@ type PokeballData = {
 
 export function Pokeballs({dataSearchAPI, pokemonName, id}:PokeballsProps) {
 
+    const [spinOut, setSpinOut] = useState<boolean>(false)
     const [pokeballData, setPokeballData] = useState<PokeballData>({
         pokemonName: '',
         skin: 0
@@ -62,8 +63,10 @@ export function Pokeballs({dataSearchAPI, pokemonName, id}:PokeballsProps) {
             }
         })
 
-        const animationInterval = setInterval(()=>{
-            clearInterval(animationInterval)
+        setSpinOut(true)
+
+        setTimeout(()=>{
+            setSpinOut(false)
         },1000)
 
         recordPokeballData()
@@ -113,7 +116,7 @@ export function Pokeballs({dataSearchAPI, pokemonName, id}:PokeballsProps) {
                 <div
                     onClick={spinBall}
                     style={{backgroundImage: `url(${skinsArr[pokeballData.skin]})`}}
-                    className={pokeballData.pokemonName ? `${styles.pokeSkin} ${styles.spin}` : styles.pokeSkin}
+                    className={spinOut ? `${styles.pokeSkin} ${styles.spin}` : styles.pokeSkin}
                 />
             </div>
         </>

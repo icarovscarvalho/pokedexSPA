@@ -21,13 +21,10 @@ export function SearchBar({dataSearchAPI}:MainProps) {
 
     function pokeballHandleAnimation() {
         setWasClicked(prevState=>!prevState)
-        // console.log('A pokebola está girando')
         
-        const interval = setInterval(()=>{
+        setTimeout(()=>{
             setWasClicked(false)
-            // console.log('O spin parou')
-            clearInterval(interval)
-        },1000)
+        }, 1000)
     }
 
     return(
