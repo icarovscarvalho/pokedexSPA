@@ -1,5 +1,11 @@
 # Pokedex SPA - React JS
 
+## Link para o Projeto
+
+https://icarovscarvalho.github.io/pokedexSPA/
+
+---
+
 ## Descrição do Projeto
 
 Este é um projeto de uma **Pokedex** desenvolvido como uma **Single Page Application (SPA)** utilizando **React JS**. A aplicação consome uma API de Pokémon para listar, detalhar e buscar informações sobre diferentes Pokémon. O objetivo principal é apresentar os dados de forma simples, interativa e responsiva.
@@ -57,6 +63,8 @@ Antes de começar, certifique-se de ter instalado:
   yarn start
 ```
 
+---
+
 ## Como Usar
 
 1. **Funcionamento básico**
@@ -78,6 +86,8 @@ Cuidado, se você girar a mesma pokebola em outro pokemon, os dados serão sobre
 5. **Funcionamento básico**
 
 Você também pode ver, logo *abaixo* da *estrela*, um botão para *trocar de skin* caso queira escolher outro tipo de pokebola.
+
+---
 
 ## API Utilizada
 
